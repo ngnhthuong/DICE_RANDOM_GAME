@@ -29,6 +29,8 @@ function resetGame() {
     score1El.textContent = 0;
     current0El.textContent = 0;
     current1El.textContent = 0;
+    namePlayer[0].textContent = 'Player 0';
+    namePlayer[1].textContent = 'Player 1';
     diceEl.classList.add('hidden');
     activePlayer[0].classList.remove('player--winner');
     activePlayer[1].classList.remove('player--winner');
@@ -43,7 +45,7 @@ function winner(){
 }
 
 function checkWinner(){
-    if(score[currentActivePlayer] >= 100 && namePlayer[currentActivePlayer].textContent === 'Winner 🏅!'){
+    if(score[currentActivePlayer] >= 10 && namePlayer[currentActivePlayer].textContent === 'Winner 🏅!'){
         resetGame();
     }
 }
@@ -70,7 +72,7 @@ btnHold.addEventListener('click', function () {
     checkWinner();
     score[currentActivePlayer] += currentScore;
     currentActivePlayer === 0 ? score0El.textContent = score[0] : score1El.textContent = score[1];
-    if (score[currentActivePlayer] >= 100) {
+    if (score[currentActivePlayer] >= 10) {
         winner();
     } else {
         changePlayer();
