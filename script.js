@@ -45,7 +45,7 @@ function winner(){
 }
 
 function checkWinner(){
-    if(score[currentActivePlayer] >= 10 && namePlayer[currentActivePlayer].textContent === 'Winner 🏅!'){
+    if(score[currentActivePlayer] >= 100 && namePlayer[currentActivePlayer].textContent === 'Winner 🏅!'){
         resetGame();
     }
 }
@@ -72,7 +72,7 @@ btnHold.addEventListener('click', function () {
     checkWinner();
     score[currentActivePlayer] += currentScore;
     currentActivePlayer === 0 ? score0El.textContent = score[0] : score1El.textContent = score[1];
-    if (score[currentActivePlayer] >= 10) {
+    if (score[currentActivePlayer] >= 100) {
         winner();
     } else {
         changePlayer();
